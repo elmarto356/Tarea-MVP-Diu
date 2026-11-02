@@ -1,0 +1,90 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+
+  &__fila {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+
+    @media (min-width: 640px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__seccion {
+    font-size: 1.1rem;
+    padding-top: 4px;
+  }
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label, &__etiqueta {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-chico);
+    background: var(--color-superficie);
+
+    &:focus {
+      outline: 2px solid var(--color-primario);
+      outline-offset: -1px;
+      border-color: var(--color-primario);
+    }
+
+    &:disabled {
+      background: var(--color-fondo);
+      color: var(--color-texto-suave);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  &__ayuda {
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+  }
+
+  &__error {
+    font-size: 0.85rem;
+    color: var(--color-error);
+    font-weight: 500;
+  }
+}
+
+.archivo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px dashed var(--color-borde);
+  border-radius: var(--radio-chico);
+
+  &__nombre {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  label.boton {
+    font-size: 0.875rem;
+    color: var(--color-primario);
+    cursor: pointer;
+  }
+}
